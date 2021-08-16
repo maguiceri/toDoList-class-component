@@ -19,13 +19,16 @@ class AddTask extends React.Component{
         const {inputValue} = this.state
         if(inputValue !== "") {
             this.props.propDePrueba(inputValue)
+            this.setState({
+                inputValue: ""
+            })
         }
     }
 
     render(){
         return(
             <>
-            <input type="text" onChange={(e) => this.handleChange(e)}></input>
+            <input type="text" onChange={(e) => this.handleChange(e)} value={this.state.inputValue}></input>
             <button onClick={() => this.handleClick()}>Agregar</button>
             </>
         )
