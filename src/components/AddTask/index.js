@@ -1,7 +1,8 @@
 import React from 'react'
+import "./styles.scss"
 
 class AddTask extends React.Component{
-    constructor(props){
+    constructor(props){    //INICIALIZACION
         super(props)
 
         this.state= {
@@ -12,7 +13,7 @@ class AddTask extends React.Component{
     handleChange(e) {
         const {value} = e.target;
         this.setState({
-            inputValue:value
+            inputValue:value             //ACTUALIZACION
         })
     }
     handleClick() {
@@ -27,10 +28,10 @@ class AddTask extends React.Component{
 
     render(){
         return(
-            <>
-            <input type="text" onChange={(e) => this.handleChange(e)} value={this.state.inputValue}></input>
-            <button onClick={() => this.handleClick()}>Agregar</button>
-            </>
+            <div className="add">
+                <input className="input" type="text" onChange={(e) => this.handleChange(e)} value={this.state.inputValue}></input>
+                <button className="button"onClick={() => this.handleClick()}>Agregar</button>
+            </div>
         )
     }
 }
